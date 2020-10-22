@@ -14,6 +14,17 @@
 */
 
 $router->get('/', function () use ($router) {
-    return 'asdasdsa';
+    return 'index web';
     return $router->app->version();
 });
+
+
+$router->get('/product/index', 'ProductController@index');
+$router->post('/product', 'ProductController@create');
+$router->get('/product/show/{id}', 'ProductController@show');
+$router->put('/product/{id}', 'ProductController@update');
+$router->delete('/product/{id}', 'ProductController@delete');
+
+
+$router->post('/register', 'UserController@register');
+$router->get('/login', 'UserController@login');
